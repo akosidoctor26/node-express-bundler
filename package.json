@@ -1,6 +1,6 @@
 {
   "name": "node-express-bundler",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Bundle stylesheets and scripts to view",
   "main": "index.js",
   "scripts": {

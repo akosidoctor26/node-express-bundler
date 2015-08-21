@@ -35,7 +35,7 @@ Output when prod
 
 Output when dev
 ```
-app.use(expressBundler.setup("prod"));
+app.use(expressBundler.setup("dev"));
 ```
 ```
 "<script type='text/javascript' src='/development/javascripts/s1.js'></script><script type='text/javascript' src='/development/javascripts/s2.js'></script><script type='text/javascript' src='/development/javascripts/s3.js'></script>"

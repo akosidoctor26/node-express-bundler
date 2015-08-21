@@ -1,0 +1,33 @@
+{
+  "name": "node-express-bundler",
+  "version": "0.0.1",
+  "description": "Bundle stylesheets and scripts to view",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akosidoctor26/node-express-bundler.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "jade",
+    "html",
+    "middleware"
+  ],
+  "author": "Kristine Doc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akosidoctor26/node-express-bundler/issues"
+  },
+  "homepage": "https://github.com/akosidoctor26/node-express-bundler#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
+}

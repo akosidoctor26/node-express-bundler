@@ -30,6 +30,8 @@ module.exports = {
 			res.locals.outputScriptBundle = function(path) {
 				if(!path || !env) return;
 				
+				if(!bundles[env] || !bundles[env][path]) return;
+				
 				return "<script type='text/javascript' src='"
 				+ bundles[env][path].join("'></script><script type='text/javascript' src='")
 				+ "'></script>";
@@ -37,6 +39,8 @@ module.exports = {
 			
 			res.locals.outputStyleBundle = function(path) {
 				if(!path || !env) return;
+				
+				if(!bundles[env] || !bundles[env][path]) return;
 				
 				return "<link rel='stylesheet' href='"
 				+ bundles[env][path].join("'/>" + "<link rel='stylesheet' href='")

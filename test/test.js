@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var bundler = require("../node-express-bundler");
+var bundler = require("../index");
 
 describe("node-express-bundler", function() {
 	var res;
@@ -114,11 +114,38 @@ describe("node-express-bundler", function() {
 			+ "<link rel='stylesheet' href='/dist/stylesheets/ss3.css'/>"
 			+ "<link rel='stylesheet' href='/dist/stylesheets/new.css'/>");
 		done();
-		
 	});	
 	
-	// 
-	// it("should", function(done) {
-	// 	done();
-	// });
+	it("should return undefined when env in setup does not exist then a script bundle was called", function(done) {
+		bundler.setup("invalid")(null, res, function() {});
+		expect(res.locals.outputStyleBundle("/path/scripts"))
+		.to.be.equal(undefined);
+		done();
+	});
+	
+	it("should return undefined when env in setup does not exist then a style bundle was called", function(done) {
+		bundler.setup("invalid")(null, res, function() {});
+		expect(res.locals.outputStyleBundle("/path/styles"))
+		.to.be.equal(undefined);
+		done();
+	});
+	
+	it("should return undefined when path does not exist then a script bundle was called", function(done) {
+		bundler.setup("prod")(null, res, function() {});
+		expect(res.locals.outputStyleBundle("/path/scripts/invalid"))
+		.to.be.equal(undefined);
+		done();
+	});
+	
+	it("should return undefined when path does not exist then a style bundle was called", function(done) {
+		bundler.setup("prod")(null, res, function() {});
+		expect(res.locals.outputStyleBundle("/path/styles/invalid"))
+		.to.be.equal(undefined);
+		done();
+	});
+	
+	
+	it("should", function(done) {
+		done();
+	});
 });
